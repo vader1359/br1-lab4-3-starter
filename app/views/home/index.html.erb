@@ -4,14 +4,6 @@
 <%= link_to "New Photo", new_photo_path, class: "btn btn-primary"%>
 
 <% @photos.each do |photo| %>
-  <div class="card photo">
-    <div class="card-header">
-    <%= photo.username%>
-    <%= time_ago_in_words photo.updated_at %> ago
-    </div>
-    <%= image_tag photo.url, class: "card-img-top", alt: "photo" %>
-    <div class="card-block">
-      <p class="card-text"><%= photo.caption %></p>
-    </div>
-  </div>
+  <%= render "photo", photo: photo %>
+ 
 <% end %>
