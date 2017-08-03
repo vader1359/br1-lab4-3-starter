@@ -21,6 +21,10 @@
         No comments yet.
     <% end %> 
 
+    <%= button_to 'Delete', photo, method: :delete %>
+
+     <%= link_to 'Edit',edit_photo_path(photo) , class: 'btn' %>
+    
     <%= form_for [photo, Comment.new] do |f| %>
       <%= f.text_field :body, placeholder: "Add a comment...", class: "form-control" %>
       
